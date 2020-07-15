@@ -1,24 +1,24 @@
 import webapp2
-#from bs4 import BeautifulSoup
-#import requests
+from bs4 import BeautifulSoup
+import requests
 from google.appengine.ext import db
 
-# class app(db.model):
-#     app_img = db.StringProperty(required=True)
-#     app_name = db.StringProperty(required=True)
+class app(db.model):
+    app_img = db.StringProperty(required=True)
+    app_name = db.StringProperty(required=True)
 
-# url = "https://play.google.com/store/apps/collection/cluster?clp=0g4jCiEKG3RvcHNlbGxpbmdfZnJlZV9BUFBMSUNBVElPThAHGAM%3D:S:ANO1ljKs-KA&gsr=CibSDiMKIQobdG9wc2VsbGluZ19mcmVlX0FQUExJQ0FUSU9OEAcYAw%3D%3D:S:ANO1ljL40zU&hl=en_IN"
-# html_content = requests.get(url).text
+url = "https://play.google.com/store/apps/collection/cluster?clp=0g4jCiEKG3RvcHNlbGxpbmdfZnJlZV9BUFBMSUNBVElPThAHGAM%3D:S:ANO1ljKs-KA&gsr=CibSDiMKIQobdG9wc2VsbGluZ19mcmVlX0FQUExJQ0FUSU9OEAcYAw%3D%3D:S:ANO1ljL40zU&hl=en_IN"
+html_content = requests.get(url).text
 
-# soup = BeautifulSoup(html_content, "lxml")
-# top_free_apps = soup.find_all(attrs = { "class" : "ImZGtf mpg5gc"})
-# for i in top_free_apps:
-#     img = i.find_all("img")
-#     name = i.find_all(attrs={"class": "KoLSrc"})
-#     obj = app(app_img = img, app_name = name)
-#     obj.put()
-#     # print(app_img[0]["data-src"])
-#     # print(app_name[0].text)
+soup = BeautifulSoup(html_content, "lxml")
+top_free_apps = soup.find_all(attrs = { "class" : "ImZGtf mpg5gc"})
+for i in top_free_apps:
+    img = i.find_all("img")
+    name = i.find_all(attrs={"class": "KoLSrc"})
+    obj = app(app_img = img, app_name = name)
+    obj.put()
+    # print(app_img[0]["data-src"])
+    # print(app_name[0].text)
 class HelloWebapp2(webapp2.RequestHandler):
     def get(self):
         self.response.write("""
