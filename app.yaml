@@ -1,4 +1,7 @@
-runtime: python37
+runtime: python27
+api_version: 1
+threadsafe: true
+
 handlers:
-- url: auto
+- url: /.*
   script: main.app
