@@ -1,4 +1,6 @@
 import webapp2
+import sys
+sys.path.insert(0, 'libs')
 from bs4 import BeautifulSoup
 import requests
 from google.appengine.ext import db
