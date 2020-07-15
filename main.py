@@ -1,26 +1,26 @@
 import webapp2
-# import sys
-# sys.path.insert(0, 'libs')
-# from bs4 import BeautifulSoup
-# import requests
-# from google.appengine.ext import db
+import sys
+sys.path.insert(0, 'libs')
+from bs4 import BeautifulSoup
+import requests
+from google.appengine.ext import db
 
-# class app(db.Model):
-#     app_img = db.StringProperty(required=True)
-#     app_name = db.StringProperty(required=True)
+class app(db.Model):
+    app_img = db.StringProperty(required=True)
+    app_name = db.StringProperty(required=True)
 
-# url = "https://play.google.com/store/apps/top?hl=en_IN"
-# html_content = requests.get(url).text
+url = "https://play.google.com/store/apps/top?hl=en_IN"
+html_content = requests.get(url).text
 
-# soup = BeautifulSoup(html_content, "lxml")
-# top_free_apps = soup.find_all(attrs = { "class" : "ImZGtf mpg5gc"})
-# for i in top_free_apps:
-#     img = i.find_all("img")
-#     name = i.find_all(attrs={"class": "KoLSrc"})
-#     obj = app(key_name = app_name)
-#     obj.app_img = img
-#     obj.app_name = name
-#     obj.put()
+soup = BeautifulSoup(html_content, "lxml")
+top_free_apps = soup.find_all(attrs = { "class" : "ImZGtf mpg5gc"})
+for i in top_free_apps:
+    img = i.find_all("img")
+    name = i.find_all(attrs={"class": "KoLSrc"})
+    obj = app(key_name = app_name)
+    obj.app_img = img
+    obj.app_name = name
+    obj.put()
     # print(app_img[0]["data-src"])
     # print(app_name[0].text)
 class HelloWebapp2(webapp2.RequestHandler):
