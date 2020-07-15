@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 import requests
 from google.appengine.ext import db
 
-class app(db.model):
+class app(db.Model):
     app_img = db.StringProperty(required=True)
     app_name = db.StringProperty(required=True)
 
@@ -17,7 +17,9 @@ top_free_apps = soup.find_all(attrs = { "class" : "ImZGtf mpg5gc"})
 for i in top_free_apps:
     img = i.find_all("img")
     name = i.find_all(attrs={"class": "KoLSrc"})
-    obj = app(app_img = img, app_name = name)
+    obj = app(key_name = app_name)
+    obj.app_img = img
+    obj.app_name = name
     obj.put()
     # print(app_img[0]["data-src"])
     # print(app_name[0].text)
