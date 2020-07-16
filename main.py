@@ -116,6 +116,15 @@ class HelloWebapp2(webapp2.RequestHandler):
 	color : white;
 	text-align: center;
 }
+#app1_img{
+	border-radius: 20%;
+}
+#app2_img{
+	border-radius: 20%;
+}
+#app3_img{
+	border-radius: 20%;
+}
 </style>
 	<title>WebApp</title>
 </head>
@@ -123,37 +132,37 @@ class HelloWebapp2(webapp2.RequestHandler):
 	<h1 id="a"><img src="https://www.americares.org/wp-content/uploads/refresh.png" width="30px" height="30px"></h1>
 	<h1 id="b"><a href="https://www.bluestacks.com/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/0/04/BlueStacks_Logo.png" width="240px" height="65px"></a></h1>
 	<h2 id="c">Top Charts</h2><br>
-	<div id = "d">Top Paid</div><br>
+	<div id = "d">Top Free Apps</div><br>
 	<p id = "app1">
-		<img id = "app1_img" src = "" width = "90px" height="90px"><br><br>
-		Club Factory<br>
-		Club Factory Inc.
+		<img id = "app1_img" src = "https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/71/1b/e6/711be6b2-9b08-98ae-0765-a924fff393c1/AppIcon-0-1x_U007emarketing-0-0-85-220-0-10.png/400x400.png" width = "120px" height="120px"><br><br>
+		Likee Lite<br>
+		Likee Video
 	</p>
 	<p id = "app2">
-		<img id = "app2_img" src = "" width = "90px" height="90px"><br><br>
-		Whatsapp<br>Whatsapp Inc.
+		<img id = "app2_img" src = "https://lh3.googleusercontent.com/OU6pqjbF8-KL_nt4s4kv6GP9bRieD1SPAYrN88JdjbnB5gnqFx3XLWp29StRmxhYmeM" width = "120px" height="120px"><br><br>
+		Snack Video<br>Snack Video
 	</p>
 	<p id = "app3">
-		<img id = "app3_img" src = "" width = "90px" height="90px"><br><br>
-		Hotstar<br>
-		Disney
+		<img id = "app3_img" src = "https://lh3.googleusercontent.com/x0uSB1RGr6UmL587yB64le4DuY0xA0KnWC8uB8cohM7vp8YDoPXakXjqPJh51_G8Mg" width = "120px" height="120px"><br><br>
+		Moj - Short Video<br>
+		ShareChat
 
 	</p>
 	<br><br><br><br><br><br><br><br><br><br><br><br>
 	<div id = "e">Top Reviewed</div><br><br>
 	<p id = "app1">
-		<img id = "app1_img" src = "" width = "90px" height="90px"><br><br>
-		Club Factory<br>
-		Club Factory Inc.
+		<img id = "app1_img" src = "https://lh3.googleusercontent.com/8dav1NGTR0LYXSTr4-819upOTQYqvhaHbZNyIXfJZYICqDLZx8owAgAnCNd_fJhqjCo" width = "120px" height="120px"><br><br>
+		Encounter Strike<br>
+		Enjoy.GameStudio.Fun
 	</p>
 	<p id = "app2">
-		<img id = "app2_img" src = "" width = "90px" height="90px"><br><br>
-		Whatsapp<br>Whatsapp Inc.
+		<img id = "app2_img" src = "https://upload.wikimedia.org/wikipedia/en/9/95/Ludo_King_Logo.webp" width = "120px" height="120px"><br><br>
+		Ludo King<br>Gametion Technologies
 	</p>
 	<p id = "app3">
-		<img id = "app3_img" src = "" width = "90px" height="90px"><br><br>
-		Hotstar<br>
-		Disney
+		<img id = "app3_img" src = "https://5play.ru/uploads/posts/2020-03/1585664962_1.webp" width = "120px" height="120px"><br><br>
+		My Talking Tom<br>
+		Outfit7 Limited
 
 	</p>
 	<br><br><br><br><br><br><br><br><br><br><br><br>
