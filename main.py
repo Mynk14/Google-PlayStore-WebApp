@@ -191,11 +191,6 @@ class HelloWebapp2(webapp2.RequestHandler):
 	</p>
 </body>
 </html>""")
-	applications = App.GqlQuery("SELECT *"
-			    "from App"
-			    "LIMIT 3")
-	for app in applications:
-		self.response.write("
 
 app = webapp2.WSGIApplication([
     ('/', HelloWebapp2),
