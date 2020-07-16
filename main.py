@@ -139,9 +139,7 @@ class HelloWebapp2(webapp2.RequestHandler):
 	<h2 id="c">Top Charts</h2><br>
 	<div id = "d">Top Free Apps</div><br>
 	<p id = "app1">""")
-	applications = App.GqlQuery("SELECT *"
-			    "from App"
-			    "LIMIT 3")
+	applications = App.all()
 	for app in applications:
 		self.response.write('<img id = "app1_img" src = "%s" width = "120px" height="120px"><br><br>' %app.app_img)
 	self.response.write("""Likee Lite<br>
