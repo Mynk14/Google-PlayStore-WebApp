@@ -15,6 +15,9 @@ class App(db.Model):
 # html_content = requests.get(url).text
 
 
+def App_key(app_package=None):
+  return db.Key.from_path('App', app_package)
+
 response = urllib2.urlopen('https://play.google.com/store/apps/collection/cluster?clp=0g4jCiEKG3RvcHNlbGxpbmdfZnJlZV9BUFBMSUNBVElPThAHGAM%3D:S:ANO1ljKs-KA&gsr=CibSDiMKIQobdG9wc2VsbGluZ19mcmVlX0FQUExJQ0FUSU9OEAcYAw%3D%3D:S:ANO1ljL40zU&hl=en_IN')
 html_content = response.read()
 soup = BeautifulSoup(html_content, "lxml")
@@ -133,10 +136,15 @@ class HelloWebapp2(webapp2.RequestHandler):
 	<h1 id="b"><a href="https://www.bluestacks.com/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/0/04/BlueStacks_Logo.png" width="240px" height="65px"></a></h1>
 	<h2 id="c">Top Charts</h2><br>
 	<div id = "d">Top Free Apps</div><br>
-	<p id = "app1">
-		<img id = "app1_img" src = "https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/71/1b/e6/711be6b2-9b08-98ae-0765-a924fff393c1/AppIcon-0-1x_U007emarketing-0-0-85-220-0-10.png/400x400.png" width = "120px" height="120px"><br><br>
+	<p id = "app1">""")
+	applications = App.GqlQuery("SELECT *"
+			    "from App"
+			    "LIMIT 3")
+	for app in applications:
+		self.response.write('<img id = "app1_img" src = "%s" width = "120px" height="120px"><br><br>' %app.app_img)
 		Likee Lite<br>
 		Likee Video
+	self.response.write("""
 	</p>
 	<p id = "app2">
 		<img id = "app2_img" src = "https://lh3.googleusercontent.com/OU6pqjbF8-KL_nt4s4kv6GP9bRieD1SPAYrN88JdjbnB5gnqFx3XLWp29StRmxhYmeM" width = "120px" height="120px"><br><br>
@@ -184,6 +192,11 @@ class HelloWebapp2(webapp2.RequestHandler):
 	</p>
 </body>
 </html>""")
+	applications = App.GqlQuery("SELECT *"
+			    "from App"
+			    "LIMIT 3")
+	for app in applications:
+		self.response.write("
 
 app = webapp2.WSGIApplication([
     ('/', HelloWebapp2),
