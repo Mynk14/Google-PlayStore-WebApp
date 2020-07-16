@@ -142,20 +142,20 @@ class HelloWebapp2(webapp2.RequestHandler):
 		if c==0:
 			self.response.write('<p id = "app1">')
 			self.response.write('<img id = "app1_img" src = "%s" width = "120px" height="120px"><br><br>' %app.app_img)
-	                self.response.write('%s<br>' %app_name)
-			self.response.write('%s<br>' %app_package)
+	                self.response.write('%s<br>' %app.app_name)
+			self.response.write('%s<br>' %app.app_package)
 			self.response.write('</p>')
 		elif c==1:
 			self.response.write('<p id = "app2">')
 			self.response.write('<img id = "app2_img" src = "%s" width = "120px" height="120px"><br><br>' %app.app_img)
-	                self.response.write('%s<br>' %app_name)
-			self.response.write('%s<br>' %app_package)
+	                self.response.write('%s<br>' %app.app_name)
+			self.response.write('%s<br>' %app.app_package)
 			self.response.write('</p>')
 		elif c==2:
 			self.response.write('<p id = "app3">')
 			self.response.write('<img id = "app3_img" src = "%s" width = "120px" height="120px"><br><br>' %app.app_img)
-	                self.response.write('%s<br>' %app_name)
-			self.response.write('%s<br>' %app_package)
+	                self.response.write('%s<br>' %app.app_name)
+			self.response.write('%s<br>' %app.app_package)
 			self.response.write('</p>')
 		else:
 			break
