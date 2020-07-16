@@ -26,7 +26,9 @@ for i in top_free_apps:
     img = i.find_all("img")
     name = i.find_all(attrs={"class": "KoLSrc"})
     package = i.find_all(attrs={"class": "poRVub"})
-    obj = App(app_img = img[0]["data-src"], app_name = name[0].text, app_package = package[0]["href"][23:])
+    obj = App(app_package = package[0]["href"][23:])
+    obj.app_img = img[0]["data-src"]
+    obj.app_name = name[0].text
     obj.put()
     # print(app_img[0]["data-src"])
     # print(app_name[0].text)
