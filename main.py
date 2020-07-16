@@ -142,9 +142,8 @@ class HelloWebapp2(webapp2.RequestHandler):
 			    "LIMIT 3")
 	for app in applications:
 		self.response.write('<img id = "app1_img" src = "%s" width = "120px" height="120px"><br><br>' %app.app_img)
-		Likee Lite<br>
+	self.response.write("""Likee Lite<br>
 		Likee Video
-	self.response.write("""
 	</p>
 	<p id = "app2">
 		<img id = "app2_img" src = "https://lh3.googleusercontent.com/OU6pqjbF8-KL_nt4s4kv6GP9bRieD1SPAYrN88JdjbnB5gnqFx3XLWp29StRmxhYmeM" width = "120px" height="120px"><br><br>
