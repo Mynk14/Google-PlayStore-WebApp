@@ -19,7 +19,7 @@ class App(db.Model):
 # def App_key(app_package=None):
 #   return db.Key.from_path('App', app_package)
 
-response = urllib2.urlopen('https://play.google.com/store/apps/collection/cluster?clp=0g4jCiEKG3RvcHNlbGxpbmdfZnJlZV9BUFBMSUNBVElPThAHGAM%3D:S:ANO1ljKs-KA&gsr=CibSDiMKIQobdG9wc2VsbGluZ19mcmVlX0FQUExJQ0FUSU9OEAcYAw%3D%3D:S:ANO1ljL40zU&hl=en_IN')
+response = urllib2.urlopen('https://play.google.com/store/apps/top')
 html_content = response.read()
 soup = BeautifulSoup(html_content, "lxml")
 top_free_apps = soup.find_all(attrs = { "class" : "ImZGtf mpg5gc"})
