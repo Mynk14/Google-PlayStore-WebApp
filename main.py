@@ -135,24 +135,32 @@ class HelloWebapp2(webapp2.RequestHandler):
 	<h1 id="a"><img src="https://www.americares.org/wp-content/uploads/refresh.png" width="30px" height="30px"></h1>
 	<h1 id="b"><a href="https://www.bluestacks.com/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/0/04/BlueStacks_Logo.png" width="240px" height="65px"></a></h1>
 	<h2 id="c">Top Charts</h2><br>
-	<div id = "d">Top Free Apps</div><br>
-	<p id = "app1">""")
+	<div id = "d">Top Free Apps</div><br>""")
 	applications = App.all()
+	c=0
 	for app in applications:
-		self.response.write('<img id = "app1_img" src = "%s" width = "120px" height="120px"><br><br>' %app.app_img)
-	self.response.write("""Likee Lite<br>
-		Likee Video
-	</p>
-	<p id = "app2">
-		<img id = "app2_img" src = "" width = "120px" height="120px"><br><br>
-		<br>
-	</p>
-	<p id = "app3">
-		<img id = "app3_img" src = "" width = "120px" height="120px"><br><br>
-		<br>
-		
-
-	</p>
+		if c==0:
+			self.response.write('<p id = "app1">')
+			self.response.write('<img id = "app1_img" src = "%s" width = "120px" height="120px"><br><br>' %app.app_img)
+	                self.response.write('%s<br>' %app_name)
+			self.response.write('%s<br>' %app_package)
+			self.response.write('</p>')
+		elif c==1:
+			self.response.write('<p id = "app2">')
+			self.response.write('<img id = "app2_img" src = "%s" width = "120px" height="120px"><br><br>' %app.app_img)
+	                self.response.write('%s<br>' %app_name)
+			self.response.write('%s<br>' %app_package)
+			self.response.write('</p>')
+		elif c==2:
+			self.response.write('<p id = "app3">')
+			self.response.write('<img id = "app3_img" src = "%s" width = "120px" height="120px"><br><br>' %app.app_img)
+	                self.response.write('%s<br>' %app_name)
+			self.response.write('%s<br>' %app_package)
+			self.response.write('</p>')
+		else:
+			break
+		c+=1
+	
 	<br><br><br><br><br><br><br><br><br><br><br><br>
 	<div id = "e">Top Reviewed</div><br><br>
 	<p id = "app1">
