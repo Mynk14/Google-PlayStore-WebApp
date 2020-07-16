@@ -10,6 +10,7 @@ from google.appengine.ext import db
 class App(db.Model):
     app_img = db.StringProperty(required=True)
     app_name = db.StringProperty(required=True)
+    app_pub = db.StringProperty(required=True)
     app_package = db.StringProperty(required=True)
 # url = "https://play.google.com/store/apps/top?hl=en_IN"
 # html_content = requests.get(url).text
@@ -24,9 +25,10 @@ soup = BeautifulSoup(html_content, "lxml")
 top_free_apps = soup.find_all(attrs = { "class" : "ImZGtf mpg5gc"})
 for i in top_free_apps:
     img = i.find_all("img")
-    name = i.find_all(attrs={"class": "KoLSrc"})
+    name = i.find_all(attrs={"class": "WsMG1c"})
+    pub = i.find_all(attrs={"class": "KoLSrc"})
     package = i.find_all(attrs={"class": "poRVub"})
-    obj = App(app_img = img[0]["data-src"], app_name = name[0].text, app_package = package[0]["href"][23:])
+    obj = App(app_img = img[0]["data-src"], app_name = name[0].text, app_pub = pub[0].text[:20], app_package = package[0]["href"][23:])
     obj.put()
     # print(app_img[0]["data-src"])
     # print(app_name[0].text)
@@ -143,19 +145,19 @@ class HelloWebapp2(webapp2.RequestHandler):
 			self.response.write('<p id = "app1">')
 			self.response.write('<img id = "app1_img" src = "%s" width = "120px" height="120px"><br><br>' %app.app_img)
 	                self.response.write('%s<br>' %app.app_name)
-			self.response.write('%s<br>' %app.app_package)
+			self.response.write('%s<br>' %app.app_pub)
 			self.response.write('</p>')
 		elif c==1:
 			self.response.write('<p id = "app2">')
 			self.response.write('<img id = "app2_img" src = "%s" width = "120px" height="120px"><br><br>' %app.app_img)
 	                self.response.write('%s<br>' %app.app_name)
-			self.response.write('%s<br>' %app.app_package)
+			self.response.write('%s<br>' %app.app_pub)
 			self.response.write('</p>')
 		elif c==2:
 			self.response.write('<p id = "app3">')
 			self.response.write('<img id = "app3_img" src = "%s" width = "120px" height="120px"><br><br>' %app.app_img)
 	                self.response.write('%s<br>' %app.app_name)
-			self.response.write('%s<br>' %app.app_package)
+			self.response.write('%s<br>' %app.app_pub)
 			self.response.write('</p>')
 		else:
 			break
