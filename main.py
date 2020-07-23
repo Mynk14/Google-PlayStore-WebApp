@@ -181,8 +181,8 @@ class HelloWebapp2(webapp2.RequestHandler):
 	color : white;
 	text-align: center;
 	border-radius: 25px;
-}
-#app3{
+        }
+        #app3{
 	margin-left: 30px;
 	float:right;
 	text-align:top;
@@ -193,8 +193,8 @@ class HelloWebapp2(webapp2.RequestHandler):
 	color : white;
 	text-align: center;
 	border-radius: 20px;
-}
-#app4{
+        }
+        #app4{
 	margin-left: 30px;
 	float:right;
 	text-align:top;
@@ -205,8 +205,8 @@ class HelloWebapp2(webapp2.RequestHandler):
 	color : white;
 	text-align: center;
 	border-radius: 20px;
-}
-#app5{
+        }
+        #app5{
 	margin-left: 30px;
 	float:right;
 	text-align:top;
@@ -217,8 +217,8 @@ class HelloWebapp2(webapp2.RequestHandler):
 	color : white;
 	text-align: center;
 	border-radius: 20px;
-}
-#app6{
+        }
+        #app6{
 	float:right;
 	text-align:top;
 	border-width:2px;
@@ -228,7 +228,7 @@ class HelloWebapp2(webapp2.RequestHandler):
 	color : white;
 	text-align: center;
 	border-radius: 20px;
-}
+        }
         </style>
         <title>WebApp</title>
 </head>
