@@ -1,3 +1,4 @@
-# Full-stack-challenge
-Website
-Google Appengine
+# Google Playstore Webapp
+Website that shows top apps on google playstore
+- Top Grossing apps
+- Top Paid apps
